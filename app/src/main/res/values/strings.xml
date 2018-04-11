@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Calc2</string>
+    <string name="btnDigit">Zero</string>
+    <string name="btnDigitZero">0</string>
+    <string name="btnDecimal">.</string>
+    <string name="btnEquals">=</string>
+    <string name="btnDigitOne">1</string>
+    <string name="btnDigit2">2</string>
+    <string name="btnDigitTwo">2</string>
+    <string name="btnDigitThree">3</string>
+    <string name="btnDigitFour">4</string>
+    <string name="btnDigitFive">5</string>
+    <string name="btnDigitSix">6</string>
+    <string name="btnDigitSeven">7</string>
+    <string name="btnDigitEight">8</string>
+    <string name="btnDigitNine">9</string>
+    <string name="btnPlus">+</string>
+    <string name="btnMinus">-</string>
+    <string name="btnMultiply">x</string>
+    <string name="btnDivide">/</string>
+    <string name="btnSin">sin</string>
+    <string name="btnCos">cos</string>
+    <string name="btnTan">tan</string>
+    <string name="btnPi">#03A0</string>
+    <string name="buttonPi">pi</string>
+    <string name="btnPower" />
+    <string name="buttonPower">^</string>
+    <string name="btnSqrt">sqrt</string>
+    <string name="btnOpenPar">(</string>
+    <string name="btnClosePar">)</string>
+    <string name="btnClear">Clear</string>
+    <string name="btnDel">DEL</string>
+    <string name="outView" />
+    <string name="btnDel">DEL</string>
+    <string name="btnDelete">Del</string>
+    <string name="btnAnswer">Ans</string>
+</resources>
