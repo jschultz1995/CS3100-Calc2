@@ -29,9 +29,13 @@
     <string name="btnOpenPar">(</string>
     <string name="btnClosePar">)</string>
     <string name="btnClear">Clear</string>
-    <string name="btnDel">DEL</string>
     <string name="outView" />
     <string name="btnDel">DEL</string>
     <string name="btnDelete">Del</string>
     <string name="btnAnswer">Ans</string>
+    <string name="rdbStandard">Standard</string>
+    <string name="rdbGraphing">Graphing</string>
+    <string name="rdbBinary">Binary</string>
+    <string name="binaryActivity">BinaryActivity</string>
+    <string name="mainActivity">MainActivity</string>
 </resources>
