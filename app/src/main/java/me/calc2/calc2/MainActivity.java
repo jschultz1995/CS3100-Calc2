@@ -2,7 +2,9 @@ package me.calc2.calc2;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import org.mariuszgromada.math.mxparser.*;
@@ -11,7 +13,8 @@ import org.mariuszgromada.math.mxparser.*;
 public class MainActivity extends Activity {
     String str = "";
     private TextView txtOut;
-
+    //private variable for keeping track of what expression to save:
+    private int expressionNumber = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -261,17 +264,165 @@ public class MainActivity extends Activity {
             }
         });
 
+        //Buttons for previous answers:
+        Button btnAns0 = (findViewById(R.id.btnAns0));
+        btnAns0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            Button button = (Button) findViewById(R.id.btnAns0);
+            str = str + button.getText();
+            txtOut.setText(str);
+            }
+        });
+
+        Button btnAns1 = (findViewById(R.id.btnAns1));
+        btnAns1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            Button button = (Button) findViewById(R.id.btnAns1);
+            str = str + button.getText();
+            txtOut.setText(str);
+            }
+        });
+
+        Button btnAns2 = (findViewById(R.id.btnAns2));
+        btnAns2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            Button button = (Button) findViewById(R.id.btnAns2);
+            str = str + button.getText();
+            txtOut.setText(str);
+            }
+        });
+
+        Button btnAns3 = (findViewById(R.id.btnAns3));
+        btnAns3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            Button button = (Button) findViewById(R.id.btnAns3);
+            str = str + button.getText();
+            txtOut.setText(str);
+            }
+        });
+
+        Button btnAns4 = (findViewById(R.id.btnAns4));
+        btnAns4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            Button button = (Button) findViewById(R.id.btnAns4);
+            str = str + button.getText();
+            txtOut.setText(str);
+            }
+        });
+
+        Button btnAns5 = (findViewById(R.id.btnAns5));
+        btnAns5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            Button button = (Button) findViewById(R.id.btnAns5);
+            str = str + button.getText();
+            txtOut.setText(str);
+            }
+        });
+
+        //Buttons for previous Expressions:
+        Button btnExp0 = (findViewById(R.id.btnExp0));
+        btnExp0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Button button = (Button) findViewById(R.id.btnExp0);
+                str = str + button.getText();
+                txtOut.setText(str);
+            }
+        });
+
+        Button btnExp1 = (findViewById(R.id.btnExp1));
+        btnExp1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Button button = (Button) findViewById(R.id.btnExp1);
+                str = str + button.getText();
+                txtOut.setText(str);
+            }
+        });
+
+        Button btnExp2 = (findViewById(R.id.btnExp2));
+        btnExp2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Button button = (Button) findViewById(R.id.btnExp2);
+                str = str + button.getText();
+                txtOut.setText(str);
+            }
+        });
+
+        Button btnExp3 = (findViewById(R.id.btnExp3));
+        btnExp3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Button button = (Button) findViewById(R.id.btnExp3);
+                str = str + button.getText();
+                txtOut.setText(str);
+            }
+        });
+
+        Button btnExp4 = (findViewById(R.id.btnExp4));
+        btnExp4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Button button = (Button) findViewById(R.id.btnExp4);
+                str = str + button.getText();
+                txtOut.setText(str);
+            }
+        });
+
+        Button btnExp5 = (findViewById(R.id.btnExp5));
+        btnExp5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Button button = (Button) findViewById(R.id.btnExp5);
+                str = str + button.getText();
+                txtOut.setText(str);
+            }
+        });
+
         Button btnEquals = (findViewById(R.id.btnEquals));
         btnEquals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //starting up previous expression saving:
+                String name = "btnExp" + expressionNumber;
+                int id = getResources().getIdentifier(name,"id", getPackageName());
+                if(id != 0)
+                {
+                  TextView newExp = (TextView) findViewById(id);
+                  newExp.setText(txtOut.getText());
+                }
+                //continuing with calculation:
                 Expression e = new Expression(str);
                 double val = e.calculate();
                 String s = Double.toString(val);
                 txtOut.setText(s);
                 str = s;
+                //adding answer to the appropriate button:
+                name = "btnAns" + expressionNumber;
+                id = getResources().getIdentifier(name,"id", getPackageName());
+                if(id != 0)
+                {
+                  Button button = (Button) findViewById(id);
+                  button.setText(s);
+                }
+                //updating the expression value:
+                ++expressionNumber;
+                if(expressionNumber == 6)
+                {
+                  expressionNumber = 0;
+                }
             }
         });
 
+
     }
+
 }
+
