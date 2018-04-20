@@ -16,6 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".BinaryActivity"></activity>
+        <activity android:name=".GraphingActivity"></activity>
     </application>
 
 </manifest>

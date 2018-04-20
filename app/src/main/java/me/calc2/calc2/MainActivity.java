@@ -1,11 +1,14 @@
 package me.calc2.calc2;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import org.mariuszgromada.math.mxparser.*;
 
@@ -15,6 +18,10 @@ public class MainActivity extends Activity {
     private TextView txtOut;
     //private variable for keeping track of what expression to save:
     private int expressionNumber = 0;
+    RadioGroup radioGroup;
+    RadioButton rdbStandard;
+    RadioButton rdbBinary;
+    RadioButton rdbGraphing;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +30,37 @@ public class MainActivity extends Activity {
 
         txtOut = findViewById(R.id.textView);
 
+        //////////////////////////////
+        //Radio Button Functionality//
+        //////////////////////////////
+
+        radioGroup = findViewById(R.id.radioGroupMain);
+        rdbStandard = findViewById(R.id.rdbStandard);
+
+        //Call Binary Activity
+        rdbBinary = findViewById(R.id.rdbBinary);
+        rdbBinary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launchActivityBinary();
+                rdbStandard.setChecked(true);
+            }
+        });
+
+        //Call Graphing Activity
+        rdbGraphing = findViewById(R.id.rdbGraphing);
+        rdbGraphing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launchActivityGraphing();
+                rdbStandard.setChecked(true);
+            }
+        });
+
+
+        //////////////////////////////////////
+        //Main Activity Button Functionality//
+        //////////////////////////////////////
 
         Button btnDigitZero = (findViewById(R.id.btnDigitZero));
         btnDigitZero.setOnClickListener(new View.OnClickListener() {
@@ -422,6 +460,24 @@ public class MainActivity extends Activity {
         });
 
 
+    }
+
+    //Functions for changing activities
+    private void launchActivityBinary() {
+
+        Intent intent = new Intent(this, BinaryActivity.class);
+        startActivity(intent);
+        if(rdbGraphing.isChecked()){
+            launchActivityGraphing();
+        }
+    }
+    private void launchActivityGraphing() {
+
+        Intent intent = new Intent(this, GraphingActivity.class);
+        startActivity(intent);
+        if(rdbBinary.isChecked()) {
+            launchActivityBinary();
+        }
     }
 
 }
