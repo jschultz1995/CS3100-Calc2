@@ -301,6 +301,46 @@ public class MainActivity extends Activity {
 
             }
         });
+        
+        //Button remove the previous button clicked
+        Button btnDelete = (findViewById(R.id.btnDelete));
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //get length of input
+                int length = str.length()-1;
+                //error output
+                String delError = "NOTHING TO DELETE";
+                //check if there is something to delete
+                if(str.equals(""))
+                    txtOut.setText(delError);
+                else {
+                    //delete pi if it is last button clicked
+                    if (str.charAt(length) == 'i')
+                        str = str.substring(0, str.length() - 2);
+                        //if ( is last character delete trig function, sqrt or just (
+                    else if (str.charAt(length) == '(') {
+                        //delete trig function
+                        if (str.charAt(length - 1) == 'n' || str.charAt(length - 1) == 's') {
+                            str = str.substring(0, str.length() - 4);
+                            //delete sqrt
+                        } else if (str.charAt(length - 1) == 't')
+                            str = str.substring(0, str.length() - 5);
+                            //delete (
+                        else
+                            str = str.substring(0, str.length() - 1);
+                    }
+                    //delete Ans
+                    else if (str.charAt(length) == 's')
+                        str = str.substring(0, str.length() - 3);
+                        //delete digit, decimal, or operator
+                    else
+                        str = str.substring(0, str.length() - 1);
+
+                    txtOut.setText(str);
+                }
+            }
+        });
 
         //Buttons for previous answers:
         Button btnAns0 = (findViewById(R.id.btnAns0));
@@ -436,12 +476,18 @@ public class MainActivity extends Activity {
                   TextView newExp = (TextView) findViewById(id);
                   newExp.setText(txtOut.getText());
                 }
+                //Error warning for syntax error and divide by zero
+                String userError = "USER ERROR";
                 //continuing with calculation:
                 Expression e = new Expression(str);
                 double val = e.calculate();
                 String s = Double.toString(val);
-                txtOut.setText(s);
-                str = s;
+                if(s.equals("NaN")
+                    txtOut.setText(userError)
+                else{
+                    txtOut.setText(s);
+                    str = s;
+                }
                 //adding answer to the appropriate button:
                 name = "btnAns" + expressionNumber;
                 id = getResources().getIdentifier(name,"id", getPackageName());
