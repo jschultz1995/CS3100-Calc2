@@ -45,7 +45,7 @@ public class BinaryActivity extends Activity {
         ////////////////////////////////////////
 
         //TODO: Clean up the F****** GUI
-        
+
         Button btnDigitZero = (findViewById(R.id.btnDigitZero));
         btnDigitZero.setOnClickListener(new View.OnClickListener() {
             @Override
