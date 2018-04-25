@@ -1,11 +1,13 @@
 package me.calc2.calc2;
 
 import android.app.Activity;
+import android.graphics.Point;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.mariuszgromada.math.mxparser.*;
 
@@ -22,6 +24,12 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         txtOut = findViewById(R.id.textView);
+
+        int width = getScreenWidth();
+        LinearLayout layoutToChange = findLayout();
+        setWidth(width, layoutToChange);
+        layoutToChange = (LinearLayout) findViewById(R.id.secondaryLayout);
+        setWidth(width, layoutToChange);
 
 
         Button btnDigitZero = (findViewById(R.id.btnDigitZero));
@@ -422,6 +430,44 @@ public class MainActivity extends Activity {
         });
 
 
+    }
+
+    public int getScreenWidth() {
+        int screenWidth;
+        Point size = new Point();
+        getWindowManager().getDefaultDisplay().getSize(size);
+        return screenWidth = size.x;
+    }
+
+    public LinearLayout findLayout() {
+        LinearLayout layout;
+        return layout = (LinearLayout) findViewById(R.id.primaryLayout);
+    }
+
+    public void setWidth( int screenWidth, LinearLayout layoutToSet) {
+        Point size = new Point();
+        int statusBarHeight = getStatusBarHeight();
+        int textViewHeight = findViewById(R.id.textView).getMeasuredHeight();
+        getWindowManager().getDefaultDisplay().getSize(size);
+        ViewGroup.LayoutParams params = layoutToSet.getLayoutParams();
+        if(size.x < size.y)
+        {
+            params.width = screenWidth;
+        }
+        else
+        {
+            params.width = (int) (.5 * screenWidth);
+        }
+        params.height = (size.y - statusBarHeight - textViewHeight);
+    }
+
+    public int getStatusBarHeight() {
+        int result = 0;
+        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
     }
 
 }
