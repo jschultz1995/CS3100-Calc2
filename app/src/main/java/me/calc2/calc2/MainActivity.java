@@ -489,8 +489,9 @@ public class MainActivity extends Activity {
                 Expression e = new Expression(str);
                 double val = e.calculate();
                 String s = Double.toString(val);
-                if(s.equals("NaN")
-                    txtOut.setText(userError)
+                if(s.equals("NaN")){
+                    txtOut.setText(userError);
+                }
                 else{
                     txtOut.setText(s);
                     str = s;
@@ -551,7 +552,8 @@ public class MainActivity extends Activity {
             result = getResources().getDimensionPixelSize(resourceId);
         }
         return result;
-    //Functions for changing activities
+    }
+    //Function for changing activities
     private void launchActivityBinary() {
 
         Intent intent = new Intent(this, BinaryActivity.class);
