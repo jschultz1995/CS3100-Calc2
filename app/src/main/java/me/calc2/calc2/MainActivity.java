@@ -2,12 +2,15 @@ package me.calc2.calc2;
 
 import android.app.Activity;
 import android.graphics.Point;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import org.mariuszgromada.math.mxparser.*;
 
@@ -17,6 +20,10 @@ public class MainActivity extends Activity {
     private TextView txtOut;
     //private variable for keeping track of what expression to save:
     private int expressionNumber = 0;
+    RadioGroup radioGroup;
+    RadioButton rdbStandard;
+    RadioButton rdbBinary;
+    RadioButton rdbGraphing;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +37,37 @@ public class MainActivity extends Activity {
         setWidth(width, layoutToChange);
         layoutToChange = (LinearLayout) findViewById(R.id.secondaryLayout);
         setWidth(width, layoutToChange);
+        //////////////////////////////
+        //Radio Button Functionality//
+        //////////////////////////////
 
+        radioGroup = findViewById(R.id.radioGroupMain);
+        rdbStandard = findViewById(R.id.rdbStandard);
+
+        //Call Binary Activity
+        rdbBinary = findViewById(R.id.rdbBinary);
+        rdbBinary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launchActivityBinary();
+                rdbStandard.setChecked(true);
+            }
+        });
+
+        //Call Graphing Activity
+        rdbGraphing = findViewById(R.id.rdbGraphing);
+        rdbGraphing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launchActivityGraphing();
+                rdbStandard.setChecked(true);
+            }
+        });
+
+
+        //////////////////////////////////////
+        //Main Activity Button Functionality//
+        //////////////////////////////////////
 
         Button btnDigitZero = (findViewById(R.id.btnDigitZero));
         btnDigitZero.setOnClickListener(new View.OnClickListener() {
@@ -271,6 +308,46 @@ public class MainActivity extends Activity {
 
             }
         });
+        
+        //Button remove the previous button clicked
+        Button btnDelete = (findViewById(R.id.btnDelete));
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //get length of input
+                int length = str.length()-1;
+                //error output
+                String delError = "NOTHING TO DELETE";
+                //check if there is something to delete
+                if(str.equals(""))
+                    txtOut.setText(delError);
+                else {
+                    //delete pi if it is last button clicked
+                    if (str.charAt(length) == 'i')
+                        str = str.substring(0, str.length() - 2);
+                        //if ( is last character delete trig function, sqrt or just (
+                    else if (str.charAt(length) == '(') {
+                        //delete trig function
+                        if (str.charAt(length - 1) == 'n' || str.charAt(length - 1) == 's') {
+                            str = str.substring(0, str.length() - 4);
+                            //delete sqrt
+                        } else if (str.charAt(length - 1) == 't')
+                            str = str.substring(0, str.length() - 5);
+                            //delete (
+                        else
+                            str = str.substring(0, str.length() - 1);
+                    }
+                    //delete Ans
+                    else if (str.charAt(length) == 's')
+                        str = str.substring(0, str.length() - 3);
+                        //delete digit, decimal, or operator
+                    else
+                        str = str.substring(0, str.length() - 1);
+
+                    txtOut.setText(str);
+                }
+            }
+        });
 
         //Buttons for previous answers:
         Button btnAns0 = (findViewById(R.id.btnAns0));
@@ -406,12 +483,18 @@ public class MainActivity extends Activity {
                   TextView newExp = (TextView) findViewById(id);
                   newExp.setText(txtOut.getText());
                 }
+                //Error warning for syntax error and divide by zero
+                String userError = "USER ERROR";
                 //continuing with calculation:
                 Expression e = new Expression(str);
                 double val = e.calculate();
                 String s = Double.toString(val);
-                txtOut.setText(s);
-                str = s;
+                if(s.equals("NaN")
+                    txtOut.setText(userError)
+                else{
+                    txtOut.setText(s);
+                    str = s;
+                }
                 //adding answer to the appropriate button:
                 name = "btnAns" + expressionNumber;
                 id = getResources().getIdentifier(name,"id", getPackageName());
@@ -468,6 +551,22 @@ public class MainActivity extends Activity {
             result = getResources().getDimensionPixelSize(resourceId);
         }
         return result;
+    //Functions for changing activities
+    private void launchActivityBinary() {
+
+        Intent intent = new Intent(this, BinaryActivity.class);
+        startActivity(intent);
+        if(rdbGraphing.isChecked()){
+            launchActivityGraphing();
+        }
+    }
+    private void launchActivityGraphing() {
+
+        Intent intent = new Intent(this, GraphingActivity.class);
+        startActivity(intent);
+        if(rdbBinary.isChecked()) {
+            launchActivityBinary();
+        }
     }
 
 }

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1d1d1d"
+    tools:context=".GraphingActivity">
+
+    <com.jjoe64.graphview.GraphView
+        android:id="@+id/graph"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="150dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <RadioGroup
+        android:id="@+id/radioGroupBinary"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="330dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginLeft="240dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginStart="240dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/rdbGraphing"
+            android:layout_width="120dp"
+            android:layout_height="21dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="31dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="31dp"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="@string/rdbGraphing"
+            app:layout_constraintBottom_toTopOf="@+id/radioGroupMain"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnTan"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroupMain" />
+
+        <RadioButton
+            android:id="@+id/rdbStandard"
+            android:layout_width="120dp"
+            android:layout_height="21dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="31dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="31dp"
+            android:layout_marginStart="12dp"
+
+            android:text="@string/rdbStandard"
+            app:layout_constraintBottom_toTopOf="@+id/btnDivide"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnTan"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroupMain"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <RadioButton
+            android:id="@+id/rdbBinary"
+            android:layout_width="120dp"
+            android:layout_height="21dp"
+            android:layout_marginEnd="31dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="31dp"
+            android:layout_marginStart="12dp"
+            android:text="@string/rdbBinary"
+            app:layout_constraintBottom_toTopOf="@+id/radioGroupMain"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnTan"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroupMain" />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/editEqn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="42dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="6dp"
+        android:ems="10"
+        android:hint="f(x) = "
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/graph"
+        app:layout_constraintEnd_toStartOf="@+id/radioGroupBinary"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editEqn"
+        android:layout_below="@+id/editEqn"
+        android:layout_marginBottom="47dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="148dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="15dp"
+        android:text="Graph"
+        app:layout_constraintBottom_toTopOf="@+id/graph"
+        app:layout_constraintEnd_toStartOf="@+id/radioGroupBinary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEqn" />
+
+
+</android.support.constraint.ConstraintLayout>

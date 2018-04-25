@@ -39,4 +39,9 @@
     <string name="btnAnsFour" >0</string>
     <string name="btnAnsFive">0</string>
     <string name="btnAnsSix">0</string>
+    <string name="rdbStandard">Standard</string>
+    <string name="rdbGraphing">Graphing</string>
+    <string name="rdbBinary">Binary</string>
+    <string name="binaryActivity">BinaryActivity</string>
+    <string name="mainActivity">MainActivity</string>
 </resources>
