@@ -10,13 +10,17 @@
 
     <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="424dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:orientation="vertical"
+        android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.957">
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_width="wrap_content">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -24,14 +28,17 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="370dp"
+                android:id="@+id/primaryLayout"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                tools:layout_editor_absoluteY="183dp">
+                android:fillViewport="true"
 
                 <LinearLayout
                     android:id="@+id/linearLayout1"
                     android:layout_width="match_parent"
-                    android:layout_height="63dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
@@ -143,7 +150,7 @@
                 <LinearLayout
                     android:id="@+id/linearLayout2"
                     android:layout_width="match_parent"
-                    android:layout_height="63dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
@@ -159,7 +166,7 @@
                         android:id="@+id/buttonPi"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="20dp"
-                        android:layout_height="55dp"
+                        android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginLeft="8dp"
@@ -181,7 +188,7 @@
                         android:id="@+id/btnDigitSeven"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="20dp"
-                        android:layout_height="55dp"
+                        android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginLeft="8dp"
@@ -203,7 +210,7 @@
                         android:id="@+id/btnDigitEight"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="20dp"
-                        android:layout_height="55dp"
+                        android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginLeft="8dp"
@@ -225,7 +232,7 @@
                         android:id="@+id/btnDigitNine"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="20dp"
-                        android:layout_height="55dp"
+                        android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginLeft="8dp"
@@ -247,7 +254,7 @@
                         android:id="@+id/btnDivide"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="20dp"
-                        android:layout_height="55dp"
+                        android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginLeft="8dp"
@@ -269,7 +276,7 @@
                 <LinearLayout
                     android:id="@+id/linearLayout3"
                     android:layout_width="match_parent"
-                    android:layout_height="63dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
@@ -285,7 +292,7 @@
                         android:id="@+id/buttonPower"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="20dp"
-                        android:layout_height="55dp"
+                        android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginLeft="8dp"
@@ -307,7 +314,7 @@
                         android:id="@+id/btnDigitFour"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="20dp"
-                        android:layout_height="55dp"
+                        android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginLeft="8dp"
@@ -329,7 +336,7 @@
                         android:id="@+id/btnDigitFive"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="20dp"
-                        android:layout_height="55dp"
+                        android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginLeft="8dp"
@@ -351,7 +358,7 @@
                         android:id="@+id/btnDigitSix"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="20dp"
-                        android:layout_height="55dp"
+                        android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginLeft="8dp"
@@ -373,7 +380,7 @@
                         android:id="@+id/btnMultiply"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="20dp"
-                        android:layout_height="55dp"
+                        android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginLeft="8dp"
@@ -395,7 +402,7 @@
                 <LinearLayout
                     android:id="@+id/linearLayout4"
                     android:layout_width="match_parent"
-                    android:layout_height="63dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
@@ -411,7 +418,7 @@
                         android:id="@+id/btnSqrt"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="20dp"
-                        android:layout_height="55dp"
+                        android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginLeft="8dp"
@@ -433,7 +440,7 @@
                         android:id="@+id/btnDigitOne"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="20dp"
-                        android:layout_height="55dp"
+                        android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginLeft="8dp"
@@ -455,7 +462,7 @@
                         android:id="@+id/btnDigitTwo"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="20dp"
-                        android:layout_height="55dp"
+                        android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginLeft="8dp"
@@ -477,7 +484,7 @@
                         android:id="@+id/btnDigitThree"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="20dp"
-                        android:layout_height="55dp"
+                        android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginLeft="8dp"
@@ -499,7 +506,7 @@
                         android:id="@+id/btnMinus"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="20dp"
-                        android:layout_height="55dp"
+                        android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginLeft="8dp"
@@ -521,7 +528,7 @@
                 <LinearLayout
                     android:id="@+id/linearLayout5"
                     android:layout_width="match_parent"
-                    android:layout_height="63dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
@@ -537,7 +544,7 @@
                         android:id="@+id/btnOpenPar"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="20dp"
-                        android:layout_height="55dp"
+                        android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginLeft="8dp"
@@ -559,7 +566,7 @@
                         android:id="@+id/btnClosePar"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="20dp"
-                        android:layout_height="55dp"
+                        android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginLeft="8dp"
@@ -581,7 +588,7 @@
                         android:id="@+id/btnDigitZero"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="20dp"
-                        android:layout_height="55dp"
+                        android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginLeft="8dp"
@@ -603,7 +610,7 @@
                         android:id="@+id/btnDecimal"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="15dp"
-                        android:layout_height="55dp"
+                        android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginLeft="8dp"
@@ -625,7 +632,7 @@
                         android:id="@+id/btnPlus"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="20dp"
-                        android:layout_height="55dp"
+                        android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginLeft="8dp"
@@ -647,7 +654,7 @@
                 <LinearLayout
                     android:id="@+id/linearLayout6"
                     android:layout_width="match_parent"
-                    android:layout_height="63dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginBottom="4dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
@@ -663,7 +670,7 @@
                         android:id="@+id/btnAnswer"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="20dp"
-                        android:layout_height="55dp"
+                        android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginLeft="8dp"
@@ -685,7 +692,7 @@
                         android:id="@+id/btnDelete"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="20dp"
-                        android:layout_height="55dp"
+                        android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginLeft="8dp"
@@ -707,7 +714,7 @@
                         android:id="@+id/btnClear"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="100dp"
-                        android:layout_height="55dp"
+                        android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginLeft="8dp"
@@ -729,7 +736,7 @@
                         android:id="@+id/btnEquals"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="20dp"
-                        android:layout_height="55dp"
+                        android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginLeft="8dp"
@@ -751,7 +758,8 @@
             </LinearLayout>
 
             <TableLayout
-                android:layout_width="355dp"
+                android:id="@+id/secondaryLayout"
+                android:layout_width="400dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="14dp"
                 android:background="#1D1D1D"
@@ -763,12 +771,14 @@
                 app:layout_constraintVertical_bias="0.0">
 
                 <TableRow
-                    android:layout_width="257dp"
-                    android:layout_height="60dp">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="2dp">
 
                     <Button
                         android:id="@+id/btnExp0"
-                        android:layout_width="290dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/btn_background"
                         android:textColor="#FFFFFF" />
@@ -790,7 +800,8 @@
 
                     <Button
                         android:id="@+id/btnExp1"
-                        android:layout_width="290dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/btn_background"
                         android:textColor="#FFFFFF" />
@@ -812,7 +823,8 @@
 
                     <Button
                         android:id="@+id/btnExp2"
-                        android:layout_width="290dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/btn_background"
                         android:textColor="#FFFFFF" />
@@ -834,7 +846,8 @@
 
                     <Button
                         android:id="@+id/btnExp3"
-                        android:layout_width="290dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/btn_background"
                         android:textColor="#FFFFFF" />
@@ -856,7 +869,8 @@
 
                     <Button
                         android:id="@+id/btnExp4"
-                        android:layout_width="290dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/btn_background"
                         android:textColor="#FFFFFF" />
@@ -877,7 +891,8 @@
 
                     <Button
                         android:id="@+id/btnExp5"
-                        android:layout_width="290dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
                         android:background="@drawable/btn_background"
@@ -901,7 +916,6 @@
         android:id="@+id/textView"
         android:layout_width="330dp"
         android:layout_height="67dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
