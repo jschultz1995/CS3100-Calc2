@@ -44,4 +44,12 @@
     <string name="rdbBinary">Binary</string>
     <string name="binaryActivity">BinaryActivity</string>
     <string name="mainActivity">MainActivity</string>
+    <string name="btnTwosCompliment">2CP</string>
+    <string name="btnOnesCompliment">1CP</string>
+    <string name="btnShiftRight">SHR</string>
+    <string name="btnShiftLeft">SHL</string>
+    <string name="btnRotateRight">RTR</string>
+    <string name="btnRotateLeft">RTL</string>
+    <string name="btnConvertToDec">C2D</string>
+    <string name="btnConvertToBin">C2B</string>
 </resources>
