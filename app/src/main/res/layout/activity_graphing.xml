@@ -104,6 +104,8 @@
         android:layout_alignLeft="@+id/editEqn"
         android:layout_below="@+id/editEqn"
         android:layout_marginBottom="47dp"
+        android:background="@drawable/btn_background"
+        android:textColor="#ffffff"
         android:layout_marginEnd="148dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="148dp"
@@ -113,6 +115,22 @@
         app:layout_constraintBottom_toTopOf="@+id/graph"
         app:layout_constraintEnd_toStartOf="@+id/radioGroupBinary"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEqn" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_background"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="47dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="15dp"
+        android:text="Clear"
+        app:layout_constraintBottom_toTopOf="@+id/graph"
+        app:layout_constraintEnd_toStartOf="@+id/radioGroupBinary"
+        app:layout_constraintStart_toEndOf="@+id/button"
         app:layout_constraintTop_toBottomOf="@+id/editEqn" />
 
 

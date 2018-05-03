@@ -17,6 +17,7 @@ import org.mariuszgromada.math.mxparser.*;
 
 public class MainActivity extends Activity {
     String str = "";
+    String strParse = "";
     private TextView txtOut;
     //private variable for keeping track of what expression to save:
     private int expressionNumber = 0;
@@ -27,6 +28,7 @@ public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -74,6 +76,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 str = str + "0";
+                strParse = strParse + "0";
                 txtOut.setText(str);
 
             }
@@ -84,6 +87,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 str = str + "1";
+                strParse = strParse + "1";
                 txtOut.setText(str);
 
             }
@@ -94,6 +98,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 str = str + "2";
+                strParse = strParse + "2";
                 txtOut.setText(str);
 
             }
@@ -104,6 +109,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 str = str + "3";
+                strParse = strParse + "3";
                 txtOut.setText(str);
 
             }
@@ -114,6 +120,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 str = str + "4";
+                strParse = strParse + "4";
                 txtOut.setText(str);
 
             }
@@ -124,6 +131,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 str = str + "5";
+                strParse = strParse + "5";
                 txtOut.setText(str);
 
             }
@@ -134,6 +142,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 str = str + "6";
+                strParse = strParse + "6";
                 txtOut.setText(str);
 
             }
@@ -144,6 +153,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 str = str + "7";
+                strParse = strParse + "7";
                 txtOut.setText(str);
 
             }
@@ -154,6 +164,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 str = str + "8";
+                strParse = strParse + "8";
                 txtOut.setText(str);
 
             }
@@ -164,6 +175,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 str = str + "9";
+                strParse = strParse + "9";
                 txtOut.setText(str);
 
             }
@@ -174,6 +186,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 str = str + ".";
+                strParse = strParse + ".";
                 txtOut.setText(str);
 
             }
@@ -184,6 +197,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 str = str + "+";
+                strParse = strParse + "+";
                 txtOut.setText(str);
 
             }
@@ -194,6 +208,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 str = str + "-";
+                strParse = strParse + "-";
                 txtOut.setText(str);
 
             }
@@ -203,7 +218,8 @@ public class MainActivity extends Activity {
         btnMultiply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + "*";
+                str = str + "X";
+                strParse = strParse + "*";
                 txtOut.setText(str);
 
             }
@@ -213,7 +229,8 @@ public class MainActivity extends Activity {
         btnDivide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + "/";
+                str = str + "÷";
+                strParse = strParse + "/";
                 txtOut.setText(str);
 
             }
@@ -223,7 +240,8 @@ public class MainActivity extends Activity {
         buttonPi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + "pi";
+                str = str + "π";
+                strParse = strParse + "pi";
                 txtOut.setText(str);
 
             }
@@ -234,6 +252,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 str = str + "^";
+                strParse = strParse + "^";
                 txtOut.setText(str);
 
             }
@@ -243,7 +262,8 @@ public class MainActivity extends Activity {
         btnSqrt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + "sqrt(";
+                str = str + "√(";
+                strParse = strParse + "sqrt(";
                 txtOut.setText(str);
 
             }
@@ -254,6 +274,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 str = str + "(";
+                strParse = strParse + "(";
                 txtOut.setText(str);
 
             }
@@ -264,6 +285,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 str = str + ")";
+                strParse = strParse + ")";
                 txtOut.setText(str);
 
             }
@@ -274,6 +296,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 str = str + "sin(";
+                strParse = strParse + "sin(";
                 txtOut.setText(str);
 
             }
@@ -284,6 +307,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 str = str + "cos(";
+                strParse = strParse + "cos(";
                 txtOut.setText(str);
 
             }
@@ -294,6 +318,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 str = str + "tan(";
+                strParse = strParse + "tan(";
                 txtOut.setText(str);
 
             }
@@ -304,6 +329,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 str = "";
+                strParse = "";
                 txtOut.setText(str);
 
             }
@@ -315,34 +341,41 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 //get length of input
-                int length = str.length()-1;
+                int length = strParse.length()-1;
                 //error output
                 String delError = "NOTHING TO DELETE";
                 //check if there is something to delete
-                if(str.equals(""))
+                if(strParse.equals(""))
                     txtOut.setText(delError);
                 else {
                     //delete pi if it is last button clicked
-                    if (str.charAt(length) == 'i')
-                        str = str.substring(0, str.length() - 2);
+                    if (strParse.charAt(length) == 'i') {
+                        strParse = strParse.substring(0, strParse.length() - 2);
+                        str = str.substring(0, str.length() - 1);
+                    }
                         //if ( is last character delete trig function, sqrt or just (
-                    else if (str.charAt(length) == '(') {
+                    else if (strParse.charAt(length) == '(') {
                         //delete trig function
-                        if (str.charAt(length - 1) == 'n' || str.charAt(length - 1) == 's') {
+                        if (strParse.charAt(length - 1) == 'n' || strParse.charAt(length - 1) == 's') {
+                            strParse = strParse.substring(0, strParse.length() - 4);
                             str = str.substring(0, str.length() - 4);
                             //delete sqrt
-                        } else if (str.charAt(length - 1) == 't')
-                            str = str.substring(0, str.length() - 5);
+                        } else if (strParse.charAt(length - 1) == 't') {
+                            strParse = strParse.substring(0, strParse.length() - 5);
+                            str = str.substring(0, str.length() - 2);
+                        }
                             //delete (
-                        else
+                        else {
+                            strParse = strParse.substring(0, strParse.length() - 1);
                             str = str.substring(0, str.length() - 1);
+                        }
                     }
-                    //delete Ans
-                    else if (str.charAt(length) == 's')
-                        str = str.substring(0, str.length() - 3);
-                        //delete digit, decimal, or operator
-                    else
+                    else {
+                        strParse = strParse.substring(0, strParse.length() - 1);
                         str = str.substring(0, str.length() - 1);
+                    }
+
+
 
                     txtOut.setText(str);
                 }
@@ -355,8 +388,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
             Button button = (Button) findViewById(R.id.btnAns0);
-            str = str + button.getText();
-            txtOut.setText(str);
+            strParse = strParse + button.getText();
+            txtOut.setText(strParse);
             }
         });
 
@@ -365,8 +398,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
             Button button = (Button) findViewById(R.id.btnAns1);
-            str = str + button.getText();
-            txtOut.setText(str);
+                strParse = strParse + button.getText();
+            txtOut.setText(strParse);
             }
         });
 
@@ -375,8 +408,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
             Button button = (Button) findViewById(R.id.btnAns2);
-            str = str + button.getText();
-            txtOut.setText(str);
+                strParse = strParse + button.getText();
+            txtOut.setText(strParse);
             }
         });
 
@@ -385,8 +418,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
             Button button = (Button) findViewById(R.id.btnAns3);
-            str = str + button.getText();
-            txtOut.setText(str);
+                strParse = strParse + button.getText();
+            txtOut.setText(strParse);
             }
         });
 
@@ -395,8 +428,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
             Button button = (Button) findViewById(R.id.btnAns4);
-            str = str + button.getText();
-            txtOut.setText(str);
+                strParse = strParse + button.getText();
+            txtOut.setText(strParse);
             }
         });
 
@@ -405,8 +438,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
             Button button = (Button) findViewById(R.id.btnAns5);
-            str = str + button.getText();
-            txtOut.setText(str);
+                strParse = strParse + button.getText();
+            txtOut.setText(strParse);
             }
         });
 
@@ -416,8 +449,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Button button = (Button) findViewById(R.id.btnExp0);
-                str = str + button.getText();
-                txtOut.setText(str);
+                strParse = strParse + button.getText();
+                txtOut.setText(strParse);
             }
         });
 
@@ -426,8 +459,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Button button = (Button) findViewById(R.id.btnExp1);
-                str = str + button.getText();
-                txtOut.setText(str);
+                strParse = strParse + button.getText();
+                txtOut.setText(strParse);
             }
         });
 
@@ -436,8 +469,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Button button = (Button) findViewById(R.id.btnExp2);
-                str = str + button.getText();
-                txtOut.setText(str);
+                strParse = strParse + button.getText();
+                txtOut.setText(strParse);
             }
         });
 
@@ -446,8 +479,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Button button = (Button) findViewById(R.id.btnExp3);
-                str = str + button.getText();
-                txtOut.setText(str);
+                strParse = strParse + button.getText();
+                txtOut.setText(strParse);
             }
         });
 
@@ -456,8 +489,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Button button = (Button) findViewById(R.id.btnExp4);
-                str = str + button.getText();
-                txtOut.setText(str);
+                strParse = strParse + button.getText();
+                txtOut.setText(strParse);
             }
         });
 
@@ -466,8 +499,8 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Button button = (Button) findViewById(R.id.btnExp5);
-                str = str + button.getText();
-                txtOut.setText(str);
+                strParse = strParse + button.getText();
+                txtOut.setText(strParse);
             }
         });
 
@@ -481,12 +514,13 @@ public class MainActivity extends Activity {
                 if(id != 0)
                 {
                   TextView newExp = (TextView) findViewById(id);
-                  newExp.setText(txtOut.getText());
+                  //newExp.setText(txtOut.getText());
+                    newExp.setText(strParse);
                 }
                 //Error warning for syntax error and divide by zero
                 String userError = "USER ERROR";
                 //continuing with calculation:
-                Expression e = new Expression(str);
+                Expression e = new Expression(strParse);
                 double val = e.calculate();
                 String s = Double.toString(val);
                 if(s.equals("NaN")){
@@ -495,6 +529,7 @@ public class MainActivity extends Activity {
                 else{
                     txtOut.setText(s);
                     str = s;
+                    strParse = s;
                 }
                 //adding answer to the appropriate button:
                 name = "btnAns" + expressionNumber;

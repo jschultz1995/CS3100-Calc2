@@ -184,15 +184,15 @@ public class BinaryActivity extends Activity {
             }
         });
 
-        Button btnAnswer = (findViewById(R.id.btnAnswer));
-        btnAnswer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(!prevStr.isEmpty())
-                    str = prevStr;
-                txtOut.setText(str);
-            }
-        });
+//        Button btnAnswer = (findViewById(R.id.btnAnswer));
+//        btnAnswer.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(!prevStr.isEmpty())
+//                    str = prevStr;
+//                txtOut.setText(str);
+//            }
+//        });
 
         Button btnClear = (findViewById(R.id.btnClear));
         btnClear.setOnClickListener(new View.OnClickListener() {

@@ -24,7 +24,7 @@ import static me.calc2.calc2.R.id.editEqn;
 
 
 public class GraphingActivity extends Activity {
-
+    boolean clearBtn = false;
     String str = "";
     private TextView txtOut;
     RadioButton rdbStandard;
@@ -55,27 +55,56 @@ public class GraphingActivity extends Activity {
             }
         });
 
+
         //////////////////////////////////////////
         //Graphing Activity Button Functionality//
         //////////////////////////////////////////
 
         Button btn = (Button) findViewById(R.id.button);
+        Button  btn2 = (Button) findViewById(R.id.button2);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                startActivity(new Intent(GraphingActivity.this, GraphingActivity.class));
+//                clearBtn = true;
+//                rdbStandard.performClick();
+            }
+
+        });
         btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                String userError = "USER ERROR";
                 Argument eArg = new Argument("x");
                 Expression e = new Expression(txtOut.getText().toString(), eArg);
                 double x,y;
                 x = -20;
+
                 GraphView graph=(GraphView) findViewById(R.id.graph);
                 LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>();
+
+//                if(clearBtn == true) {
+//                    graph.removeAllSeries();
+//
+//                    clearBtn = false;
+//                    Log.d("CLICK", "HERE WE ARE!");
+//                }
 
                 for(int i = 0; i < 400; i++) {
                     x = x + 0.1;
                     eArg.setArgumentValue(x);
                     y = e.calculate();
-                    series.appendData(new DataPoint(x,y),true,500);
+                    String s = Double.toString(y);
+                    if(s.equals("NaN")){
+                        txtOut.setText(userError);
+                    }
+                    else{
+                        series.appendData(new DataPoint(x,y),true,400);
+                    }
+
                 }
                 graph.addSeries(series);
+
+
+
             }
         });
     }

@@ -29,7 +29,7 @@
 
             <LinearLayout
                 android:id="@+id/primaryLayout"
-                android:layout_width="wrap_content"
+                android:layout_width="417dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 tools:layout_editor_absoluteY="183dp">
@@ -667,31 +667,9 @@
                     app:layout_constraintVertical_bias="0.0">
 
                     <Button
-                        android:id="@+id/btnAnswer"
-                        style="?android:attr/buttonBarButtonStyle"
-                        android:layout_width="20dp"
-                        android:layout_height="50dp"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/btn_background"
-                        android:text="@string/btnAnswer"
-                        android:textColor="#ffffff"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.626"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.145" />
-
-                    <Button
                         android:id="@+id/btnDelete"
                         style="?android:attr/buttonBarButtonStyle"
-                        android:layout_width="20dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
@@ -713,7 +691,7 @@
                     <Button
                         android:id="@+id/btnClear"
                         style="?android:attr/buttonBarButtonStyle"
-                        android:layout_width="100dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
@@ -735,7 +713,7 @@
                     <Button
                         android:id="@+id/btnEquals"
                         style="?android:attr/buttonBarButtonStyle"
-                        android:layout_width="20dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="50dp"
                         android:layout_marginBottom="8dp"
                         android:layout_marginEnd="8dp"
@@ -903,6 +881,7 @@
                         android:layout_width="55dp"
                         android:layout_height="55dp"
                         android:layout_marginLeft="8dp"
+                        android:layout_marginTop="1dp"
                         android:background="@drawable/btn_background"
                         android:text="@string/btnAnsSix"
                         android:textColor="#FFFFFF" />
@@ -917,8 +896,6 @@
         android:layout_width="330dp"
         android:layout_height="67dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="#000000"
@@ -927,7 +904,7 @@
         android:maxLines="1"
         android:text=""
         android:textColor="#fff"
-        android:textSize="35sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
