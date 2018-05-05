@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Point;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -75,7 +76,7 @@ public class MainActivity extends Activity {
         btnDigitZero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + "0";
+                str = txtOut.getText() + "0";
                 strParse = strParse + "0";
                 txtOut.setText(str);
 
@@ -86,7 +87,7 @@ public class MainActivity extends Activity {
         btnDigitOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + "1";
+                str = txtOut.getText() + "1";
                 strParse = strParse + "1";
                 txtOut.setText(str);
 
@@ -97,7 +98,7 @@ public class MainActivity extends Activity {
         btnDigitTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + "2";
+                str = txtOut.getText() + "2";
                 strParse = strParse + "2";
                 txtOut.setText(str);
 
@@ -108,7 +109,7 @@ public class MainActivity extends Activity {
         btnDigitThree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + "3";
+                str = txtOut.getText() + "3";
                 strParse = strParse + "3";
                 txtOut.setText(str);
 
@@ -119,7 +120,7 @@ public class MainActivity extends Activity {
         btnDigitFour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + "4";
+                str = txtOut.getText() + "4";
                 strParse = strParse + "4";
                 txtOut.setText(str);
 
@@ -130,7 +131,7 @@ public class MainActivity extends Activity {
         btnDigitFive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + "5";
+                str = txtOut.getText() + "5";
                 strParse = strParse + "5";
                 txtOut.setText(str);
 
@@ -141,7 +142,7 @@ public class MainActivity extends Activity {
         btnDigitSix.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + "6";
+                str = txtOut.getText() + "6";
                 strParse = strParse + "6";
                 txtOut.setText(str);
 
@@ -152,7 +153,7 @@ public class MainActivity extends Activity {
         btnDigitSeven.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + "7";
+                str = txtOut.getText() + "7";
                 strParse = strParse + "7";
                 txtOut.setText(str);
 
@@ -163,7 +164,7 @@ public class MainActivity extends Activity {
         btnDigitEight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + "8";
+                str = txtOut.getText() + "8";
                 strParse = strParse + "8";
                 txtOut.setText(str);
 
@@ -174,7 +175,7 @@ public class MainActivity extends Activity {
         btnDigitNine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + "9";
+                str = txtOut.getText() + "9";
                 strParse = strParse + "9";
                 txtOut.setText(str);
 
@@ -185,7 +186,7 @@ public class MainActivity extends Activity {
         btnDecimal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + ".";
+                str = txtOut.getText() + ".";
                 strParse = strParse + ".";
                 txtOut.setText(str);
 
@@ -196,7 +197,7 @@ public class MainActivity extends Activity {
         btnPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + "+";
+                str = txtOut.getText() + "+";
                 strParse = strParse + "+";
                 txtOut.setText(str);
 
@@ -207,7 +208,7 @@ public class MainActivity extends Activity {
         btnMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + "-";
+                str = txtOut.getText() + "-";
                 strParse = strParse + "-";
                 txtOut.setText(str);
 
@@ -218,7 +219,7 @@ public class MainActivity extends Activity {
         btnMultiply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + "X";
+                str = txtOut.getText() + "X";
                 strParse = strParse + "*";
                 txtOut.setText(str);
 
@@ -229,7 +230,7 @@ public class MainActivity extends Activity {
         btnDivide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + "÷";
+                str = txtOut.getText() + "÷";
                 strParse = strParse + "/";
                 txtOut.setText(str);
 
@@ -240,7 +241,7 @@ public class MainActivity extends Activity {
         buttonPi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + "π";
+                str = txtOut.getText() + "π";
                 strParse = strParse + "pi";
                 txtOut.setText(str);
 
@@ -251,7 +252,7 @@ public class MainActivity extends Activity {
         buttonPower.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + "^";
+                str = txtOut.getText() + "^";
                 strParse = strParse + "^";
                 txtOut.setText(str);
 
@@ -262,7 +263,7 @@ public class MainActivity extends Activity {
         btnSqrt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + "√(";
+                str = txtOut.getText() + "√(";
                 strParse = strParse + "sqrt(";
                 txtOut.setText(str);
 
@@ -273,7 +274,7 @@ public class MainActivity extends Activity {
         btnOpenPar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + "(";
+                str = txtOut.getText() + "(";
                 strParse = strParse + "(";
                 txtOut.setText(str);
 
@@ -284,7 +285,7 @@ public class MainActivity extends Activity {
         btnClosePar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + ")";
+                str = txtOut.getText() + ")";
                 strParse = strParse + ")";
                 txtOut.setText(str);
 
@@ -295,7 +296,7 @@ public class MainActivity extends Activity {
         btnSin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + "sin(";
+                str = txtOut.getText() + "sin(";
                 strParse = strParse + "sin(";
                 txtOut.setText(str);
 
@@ -306,7 +307,7 @@ public class MainActivity extends Activity {
         btnCos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + "cos(";
+                str = txtOut.getText() + "cos(";
                 strParse = strParse + "cos(";
                 txtOut.setText(str);
 
@@ -317,7 +318,7 @@ public class MainActivity extends Activity {
         btnTan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                str = str + "tan(";
+                str = txtOut.getText() + "tan(";
                 strParse = strParse + "tan(";
                 txtOut.setText(str);
 
@@ -388,6 +389,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
             Button button = (Button) findViewById(R.id.btnAns0);
+            str = str + button.getText();
             strParse = strParse + button.getText();
             txtOut.setText(strParse);
             }
@@ -398,6 +400,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
             Button button = (Button) findViewById(R.id.btnAns1);
+                str = str + button.getText();
                 strParse = strParse + button.getText();
             txtOut.setText(strParse);
             }
@@ -408,6 +411,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
             Button button = (Button) findViewById(R.id.btnAns2);
+                str = str + button.getText();
                 strParse = strParse + button.getText();
             txtOut.setText(strParse);
             }
@@ -418,6 +422,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
             Button button = (Button) findViewById(R.id.btnAns3);
+                str = str + button.getText();
                 strParse = strParse + button.getText();
             txtOut.setText(strParse);
             }
@@ -428,6 +433,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
             Button button = (Button) findViewById(R.id.btnAns4);
+                str = str + button.getText();
                 strParse = strParse + button.getText();
             txtOut.setText(strParse);
             }
@@ -438,6 +444,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
             Button button = (Button) findViewById(R.id.btnAns5);
+                str = str + button.getText();
                 strParse = strParse + button.getText();
             txtOut.setText(strParse);
             }
@@ -449,6 +456,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Button button = (Button) findViewById(R.id.btnExp0);
+                str = str + button.getText();
                 strParse = strParse + button.getText();
                 txtOut.setText(strParse);
             }
@@ -459,6 +467,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Button button = (Button) findViewById(R.id.btnExp1);
+                str = str + button.getText();
                 strParse = strParse + button.getText();
                 txtOut.setText(strParse);
             }
@@ -469,6 +478,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Button button = (Button) findViewById(R.id.btnExp2);
+                str = str + button.getText();
                 strParse = strParse + button.getText();
                 txtOut.setText(strParse);
             }
@@ -479,6 +489,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Button button = (Button) findViewById(R.id.btnExp3);
+                str = str + button.getText();
                 strParse = strParse + button.getText();
                 txtOut.setText(strParse);
             }
@@ -489,6 +500,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Button button = (Button) findViewById(R.id.btnExp4);
+                str = str + button.getText();
                 strParse = strParse + button.getText();
                 txtOut.setText(strParse);
             }
@@ -499,6 +511,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Button button = (Button) findViewById(R.id.btnExp5);
+                str = str + button.getText();
                 strParse = strParse + button.getText();
                 txtOut.setText(strParse);
             }
